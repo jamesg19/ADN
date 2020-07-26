@@ -14,6 +14,9 @@ import java.util.Scanner;
 public class Decodif {
     String SecuenciaADN1;
     String SecuenciaADN2;
+    int ADN1;
+    int ADN2;
+    
     Scanner entrada=new Scanner(System.in);
     
     public void PedirSecuencia1(){
@@ -26,7 +29,15 @@ public class Decodif {
     public void PedirSecuencia2(){
         System.out.println("Ingrese la secuencia 2 de ADN:");
         SecuenciaADN2=entrada.nextLine();
+        DeterminarLongitud();
     }
     
+    
+    public void DeterminarLongitud(){
+        ADN1=SecuenciaADN1.length();
+        ADN2=SecuenciaADN2.length();
+        
+        
+    }
     
 }
