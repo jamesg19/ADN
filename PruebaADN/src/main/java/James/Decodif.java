@@ -59,25 +59,28 @@ public class Decodif {
     }
     
     public void DeterminarCadena(){
-        
-        for(int i=0; i<LongitudADN1+1;i++){
+    SubCadenaADN1="";    
+        for (int i = 0; i <LongitudADN1 ; i++) {
             
-           for (int j = 0; j >=LongitudADN1; j++){
-             
-    
-            if(SecuenciaADN2.contains(SecuenciaADN1.substring(j, i))&&
-                    
-                    (SubCadenaADN1.length() < SecuenciaADN1.substring(j, i).length())){
-                ContCadena++;
-                //pal[ContCadena] = SecuenciaADN1.substring(j, i);
-                        
-            //System.out.println( SecuenciaADN1.substring(i, j) );
-            } else{
-                System.out.println("No se encuentran Secuencias");
-            } 
-           }  
+            
+            for (int j = 0; j < i; j++) {
+               
+               
+                if (SecuenciaADN2.contains(SecuenciaADN1.substring(j, i)) && SubCadenaADN1.length() < SecuenciaADN1.substring(j, i).length()) {
+                  //pal[ContCadena] = SecuenciaADN1.substring(j, i);
+                  //ContCadena++;
+                  SubCadenaADN1 = SecuenciaADN1.substring(j, i);
+                  //System.out.println( SecuenciaADN1.substring(i, j) );
+                }
+    //            else{
+    //                System.out.println("No se encuentran Secuencias");
+    //            } 
+                
+            }
+            
         }
-        System.out.println(Arrays.toString(pal));
+        
+        System.out.println(SubCadenaADN1);
     }
     
 }
