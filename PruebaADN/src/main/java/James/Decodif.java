@@ -66,10 +66,13 @@ public class Decodif {
             for (int j = 0; j < i; j++) {
                
                
-                if (SecuenciaADN2.contains(SecuenciaADN1.substring(j, i)) && SubCadenaADN1.length() < SecuenciaADN1.substring(j, i).length()) {
+                if (SecuenciaADN2.contains(SecuenciaADN1.substring(j, i))) {
+                    
+                    if(SubCadenaADN1.length() < SecuenciaADN1.substring(j, i).length()){
+                      SubCadenaADN1 = SecuenciaADN1.substring(j, i);   
+                    }
                   //pal[ContCadena] = SecuenciaADN1.substring(j, i);
                   //ContCadena++;
-                  SubCadenaADN1 = SecuenciaADN1.substring(j, i);
                   //System.out.println( SecuenciaADN1.substring(i, j) );
                 }
     //            else{
