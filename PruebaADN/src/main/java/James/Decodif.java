@@ -5,6 +5,7 @@
  */
 package James;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -16,6 +17,7 @@ public class Decodif {
     String SecuenciaADN2;
     int LongitudADN1;
     int LongitudADN2;
+    int ContCadena=-1;
     String Resultado;
     String[] pal=new String[15];
     String SubCadenaADN1;
@@ -58,15 +60,16 @@ public class Decodif {
     
     public void DeterminarCadena(){
         
-        for(int i=0; i<=LongitudADN1;i++){
+        for(int i=0; i<LongitudADN1+1;i++){
             
-           for (int j = 0; j <LongitudADN1; j++){
+           for (int j = 0; j >=LongitudADN1; j++){
              
     
             if(SecuenciaADN2.contains(SecuenciaADN1.substring(j, i))&&
                     
-                    (SubCadenaADN1.length() < SecuenciaADN1.substring(i, j).length())){
-                SubCadenaADN1 = SecuenciaADN1.substring(i, j);
+                    (SubCadenaADN1.length() < SecuenciaADN1.substring(j, i).length())){
+                ContCadena++;
+                //pal[ContCadena] = SecuenciaADN1.substring(j, i);
                         
             //System.out.println( SecuenciaADN1.substring(i, j) );
             } else{
@@ -74,7 +77,7 @@ public class Decodif {
             } 
            }  
         }
-        System.out.println(SubCadenaADN1);
+        System.out.println(Arrays.toString(pal));
     }
     
 }
